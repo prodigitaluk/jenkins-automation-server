@@ -2,6 +2,12 @@ resource "aws_security_group" "jenkins_security_group" {
   name        = "jenkins_security_group"
   description = "Allows Port SSH and HTTP Traffic"
 
+  vpc_id = aws_vpc.this.id
+
+  tags = {
+    Name = "allow_tls"
+  }
+
   ingress {
     description = "Allow SSH Traffic"
     from_port   = 22
