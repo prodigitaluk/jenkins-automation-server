@@ -15,7 +15,7 @@ resource "aws_default_vpc" "this" {
 }
 
 resource "aws_instance" "this" {
-  ami                    = "ami-0766f68f0b06ab145" #data.aws_ami.this.id
+  ami                    = data.aws_ami.this.id
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.jenkins_security_group.id]
   key_name               = "collinsefe"
@@ -27,7 +27,7 @@ resource "aws_instance" "this" {
 }
 
 resource "aws_instance" "jenkins_ec2" {
-  ami                         = "ami-0766f68f0b06ab145"  #data.aws_ami.this.id
+  ami                         = data.aws_ami.this.id
   instance_type               = "t2.micro"
   key_name                    = "collinsefe"
   associate_public_ip_address = true
