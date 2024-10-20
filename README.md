@@ -22,3 +22,4 @@ An EC2 Instance is Amazon’s Elastic Compute Cloud used for running application
 Jenkins is an open source automation server that enables developers to build, test, and deploy their software. It is an open-source automation tool for Continuous Integration (CI) and Continuous Deployment (CD).
 
 Similar to file folders, an S3 Bucket is public cloud storage for objects stored in simple storage service (S3).
+
