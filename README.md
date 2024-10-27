@@ -23,3 +23,16 @@ Jenkins is an open source automation server that enables developers to build, te
 
 Similar to file folders, an S3 Bucket is public cloud storage for objects stored in simple storage service (S3).
 
+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
+
+
+# Install terraform
+# sudo yum install -y yum-utils shadow-utils
+# sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+# sudo yum -y install terraform
+
+# sudo wget# Install maven
+# http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+# sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+# sudo yum install -y apache-maven
+# mvn --version
