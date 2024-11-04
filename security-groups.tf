@@ -41,9 +41,9 @@ resource "aws_security_group" "jenkins_security_group" {
   }
 
   ingress {
-    description = "Allow 8081 Traffic for Node App"
+    description = "Allow Traffic for Node App"
     from_port   = 8081
-    to_port     = 8081
+    to_port     = 8085
     protocol    = "TCP"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -56,30 +56,4 @@ resource "aws_security_group" "jenkins_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
-
-resource "aws_security_group" "rds_sg" {
-  name        = "rds_security_group"
-  description = "Allow access to RDS instance"
-  vpc_id      = aws_default_vpc.this.id
-
-  ingress {
-    from_port   = 3306 # MySQL default port
-    to_port     = 3306
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # Change this to your EC2 instance CIDR for security
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"          # All outbound traffic
-    cidr_blocks = ["0.0.0.0/0"] # Change as necessary
-  }
-
-  tags = {
-    Name = "RDS-Security-Group"
-  }
-}
-
 
