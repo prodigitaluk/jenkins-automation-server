@@ -40,6 +40,14 @@ resource "aws_security_group" "jenkins_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    description = "Allow Traffic for Node App"
+    from_port   = 8081
+    to_port     = 8085
+    protocol    = "TCP"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
 
   egress {
     from_port   = 0
@@ -48,3 +56,4 @@ resource "aws_security_group" "jenkins_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
